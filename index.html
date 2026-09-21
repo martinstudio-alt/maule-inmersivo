@@ -2,13 +2,10 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MAULE INMERSO</title>
-
 
   <style>
 
@@ -16,52 +13,38 @@
       box-sizing: border-box;
     }
 
-
     html,
     body {
-
       margin: 0;
-
       width: 100%;
-
       height: 100%;
-
       overflow: hidden;
-
       font-family: Arial, sans-serif;
-
       background: #000;
-
     }
 
 
     /* =========================
-       PANTALLA INICIO
+       INICIO
        ========================= */
 
     #inicio {
-
       width: 100%;
-
       height: 100%;
 
       display: flex;
-
       flex-direction: column;
 
       align-items: center;
-
       justify-content: center;
 
       gap: 40px;
 
       background: #000;
-
     }
 
 
     .titulo {
-
       color: white;
 
       font-size: clamp(40px, 7vw, 90px);
@@ -71,12 +54,10 @@
       letter-spacing: 8px;
 
       text-align: center;
-
     }
 
 
     .boton {
-
       padding: 18px 55px;
 
       font-size: 24px;
@@ -90,21 +71,17 @@
       color: white;
 
       cursor: pointer;
-
     }
 
 
     .boton:hover {
-
       background: white;
-
       color: black;
-
     }
 
 
     /* =========================
-       PANTALLA MAPA
+       MAPA
        ========================= */
 
     #mapaPantalla {
@@ -112,127 +89,87 @@
       display: none;
 
       width: 100%;
-
       height: 100%;
 
-      background: #111;
+      background: #000;
 
       position: relative;
 
       align-items: center;
-
       justify-content: center;
 
       flex-direction: column;
-
-    }
-
-
-    .tituloMapa {
-
-      position: absolute;
-
-      top: 30px;
-
-      left: 0;
-
-      width: 100%;
-
-      text-align: center;
-
-      color: white;
-
-      font-size: clamp(28px, 4vw, 55px);
-
-      letter-spacing: 5px;
-
-      z-index: 10;
-
     }
 
 
     .mapaContenedor {
 
       width: 100%;
-
       height: 100%;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
-
     }
 
 
     .mapaContenedor img {
 
       width: 100%;
-
       height: 100%;
 
       object-fit: contain;
 
       display: block;
-
     }
 
 
     /* =========================
-       MARCADOR 01
+       ZONA INVISIBLE 01
        ========================= */
 
-    .marcador {
+    .zona01 {
 
       position: absolute;
 
       left: 74%;
-
       top: 21%;
 
       width: 81px;
-
       height: 81px;
-
-      border-radius: 50%;
-
-      border: 4px solid white;
 
       background: transparent;
 
-      color: white;
+      border: none;
 
-      font-size: 22px;
+      outline: none;
 
-      font-weight: bold;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
+      box-shadow: none;
 
       cursor: pointer;
 
-      z-index: 30;
-
-      box-shadow: 0 0 15px rgba(255,255,255,0.7);
-
       padding: 0;
 
+      z-index: 30;
     }
 
 
-    .marcador:hover {
+    .zona01:hover {
+      background: transparent;
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
 
-      transform: scale(1.1);
 
+    .zona01:focus {
+      outline: none;
     }
 
 
     /* =========================
-       PANTALLA VIDEO
+       VIDEO
        ========================= */
 
     #videoPantalla {
@@ -242,11 +179,9 @@
       position: absolute;
 
       top: 0;
-
       left: 0;
 
       width: 100%;
-
       height: 100%;
 
       background: #000;
@@ -254,27 +189,23 @@
       z-index: 100;
 
       align-items: center;
-
       justify-content: center;
-
     }
 
 
     #video01 {
 
       width: 100%;
-
       height: 100%;
 
       object-fit: contain;
 
       background: #000;
-
     }
 
 
     /* =========================
-       BOTÓN VOLVER
+       VOLVER
        ========================= */
 
     .volver {
@@ -282,7 +213,6 @@
       position: absolute;
 
       bottom: 30px;
-
       left: 30px;
 
       padding: 12px 28px;
@@ -300,16 +230,13 @@
       cursor: pointer;
 
       z-index: 200;
-
     }
 
 
     .volver:hover {
 
       background: white;
-
       color: black;
-
     }
 
   </style>
@@ -321,15 +248,13 @@
 
 
   <!-- =========================
-       INICIO
+       PANTALLA INICIO
        ========================= -->
 
   <div id="inicio">
 
     <div class="titulo">
-
       MAULE INMERSO
-
     </div>
 
 
@@ -346,35 +271,33 @@
 
 
   <!-- =========================
-       MAPA
+       PANTALLA MAPA
        ========================= -->
 
   <div id="mapaPantalla">
-
-    <div class="tituloMapa">
-
-      MAULE
-
-    </div>
 
 
     <div class="mapaContenedor">
 
       <img
-        src="https://drive.google.com/thumbnail?id=1RM78Jn1BFrPTOsVHVh2S1JdEvnlowipj&sz=w1920"
+        src="IMAGENES/mapa.webp"
         alt="Mapa de la Región del Maule">
 
     </div>
 
 
-    <!-- MARCADOR 01 -->
+    <!--
+      ZONA INVISIBLE DEL PUNTO 01
+
+      No se ve.
+      El usuario toca directamente
+      sobre el mapa.
+    -->
 
     <button
-      class="marcador"
+      class="zona01"
+      aria-label="Punto 01"
       onclick="abrirVideo01()">
-
-      01
-
     </button>
 
 
@@ -396,19 +319,20 @@
 
   <div id="videoPantalla">
 
+
     <video
       id="video01"
       playsinline
-      preload="auto"
-      controls="false">
+      preload="auto">
 
       <source
-        src="https://drive.google.com/uc?export=download&id=11i4upX3539zK_nJPzEw9v06o6gCOEIZB"
+        src="VIDEOS/video 01.mp4"
         type="video/mp4">
 
       Tu navegador no puede reproducir este video.
 
     </video>
+
 
   </div>
 
@@ -439,24 +363,39 @@
 
     function abrirVideo01() {
 
-      const mapa = document.getElementById("mapaPantalla");
+      const mapa =
+        document.getElementById("mapaPantalla");
 
-      const videoPantalla = document.getElementById("videoPantalla");
+      const pantallaVideo =
+        document.getElementById("videoPantalla");
 
-      const video = document.getElementById("video01");
+      const video =
+        document.getElementById("video01");
 
+
+      /* Ocultar mapa */
 
       mapa.style.display = "none";
 
-      videoPantalla.style.display = "flex";
 
+      /* Mostrar video */
+
+      pantallaVideo.style.display = "flex";
+
+
+      /* Comenzar desde el principio */
 
       video.currentTime = 0;
 
 
-      video.play().catch(error => {
+      /* Reproducir */
 
-        console.log("No se pudo iniciar automáticamente:", error);
+      video.play().catch(function(error) {
+
+        console.log(
+          "No se pudo iniciar el video:",
+          error
+        );
 
       });
 
@@ -468,18 +407,32 @@
        VIDEO TERMINADO
        ========================= */
 
-    document.getElementById("video01").addEventListener("ended", function() {
+    document
+      .getElementById("video01")
+      .addEventListener(
+        "ended",
+        function() {
 
-      this.pause();
+          this.pause();
 
-      this.currentTime = 0;
+          this.currentTime = 0;
 
 
-      document.getElementById("videoPantalla").style.display = "none";
+          /* Ocultar video */
 
-      document.getElementById("mapaPantalla").style.display = "flex";
+          document
+            .getElementById("videoPantalla")
+            .style.display = "none";
 
-    });
+
+          /* Volver al mapa */
+
+          document
+            .getElementById("mapaPantalla")
+            .style.display = "flex";
+
+        }
+      );
 
 
 
@@ -489,9 +442,16 @@
 
     function volverInicio() {
 
-      document.getElementById("mapaPantalla").style.display = "none";
+      const mapa =
+        document.getElementById("mapaPantalla");
 
-      document.getElementById("inicio").style.display = "flex";
+      const inicio =
+        document.getElementById("inicio");
+
+
+      mapa.style.display = "none";
+
+      inicio.style.display = "flex";
 
     }
 
