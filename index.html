@@ -2,10 +2,13 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MAULE INMERSIVO</title>
+
 
   <style>
 
@@ -13,26 +16,36 @@
       box-sizing: border-box;
     }
 
+
     html,
     body {
+
       margin: 0;
+
       width: 100%;
+
       height: 100%;
+
       overflow: hidden;
+
       font-family: Arial, sans-serif;
+
       background: #000;
+
     }
 
 
-    /* =========================
-       INICIO
-       ========================= */
+    /* =====================================================
+       PANTALLA INICIAL
+       ===================================================== */
 
     #inicio {
+
       width: 100%;
       height: 100%;
 
       display: flex;
+
       flex-direction: column;
 
       align-items: center;
@@ -41,10 +54,12 @@
       gap: 40px;
 
       background: #000;
+
     }
 
 
     .titulo {
+
       color: white;
 
       font-size: clamp(40px, 7vw, 90px);
@@ -54,10 +69,12 @@
       letter-spacing: 8px;
 
       text-align: center;
+
     }
 
 
     .boton {
+
       padding: 18px 55px;
 
       font-size: 24px;
@@ -71,34 +88,37 @@
       color: white;
 
       cursor: pointer;
+
     }
 
 
     .boton:hover {
+
       background: white;
+
       color: black;
+
     }
 
 
-    /* =========================
-       MAPA
-       ========================= */
+    /* =====================================================
+       PANTALLA MAPA
+       ===================================================== */
 
     #mapaPantalla {
 
       display: none;
+
+      position: relative;
 
       width: 100%;
       height: 100%;
 
       background: #000;
 
-      position: relative;
-
       align-items: center;
       justify-content: center;
 
-      flex-direction: column;
     }
 
 
@@ -111,6 +131,7 @@
 
       align-items: center;
       justify-content: center;
+
     }
 
 
@@ -122,12 +143,13 @@
       object-fit: contain;
 
       display: block;
+
     }
 
 
-    /* =========================
-       ZONA INVISIBLE 01
-       ========================= */
+    /* =====================================================
+       ZONA INVISIBLE DEL PUNTO 01
+       ===================================================== */
 
     .zona01 {
 
@@ -139,6 +161,10 @@
       width: 81px;
       height: 81px;
 
+      padding: 0;
+
+      margin: 0;
+
       background: transparent;
 
       border: none;
@@ -149,71 +175,36 @@
 
       cursor: pointer;
 
-      padding: 0;
-
       z-index: 30;
+
     }
 
 
-    .zona01:hover {
+    .zona01:hover,
+    .zona01:focus,
+    .zona01:active {
+
       background: transparent;
+
       border: none;
+
       outline: none;
+
       box-shadow: none;
+
     }
 
 
-    .zona01:focus {
-      outline: none;
-    }
-
-
-    /* =========================
-       VIDEO
-       ========================= */
-
-    #videoPantalla {
-
-      display: none;
-
-      position: absolute;
-
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 100%;
-
-      background: #000;
-
-      z-index: 100;
-
-      align-items: center;
-      justify-content: center;
-    }
-
-
-    #video01 {
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-
-      background: #000;
-    }
-
-
-    /* =========================
-       VOLVER
-       ========================= */
+    /* =====================================================
+       BOTÓN VOLVER
+       ===================================================== */
 
     .volver {
 
       position: absolute;
 
-      bottom: 30px;
       left: 30px;
+      bottom: 30px;
 
       padding: 12px 28px;
 
@@ -229,14 +220,55 @@
 
       cursor: pointer;
 
-      z-index: 200;
+      z-index: 50;
+
     }
 
 
     .volver:hover {
 
       background: white;
+
       color: black;
+
+    }
+
+
+    /* =====================================================
+       PANTALLA VIDEO
+       ===================================================== */
+
+    #videoPantalla {
+
+      display: none;
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background: #000;
+
+      align-items: center;
+      justify-content: center;
+
+      z-index: 100;
+
+    }
+
+
+    #video01 {
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      background: #000;
+
     }
 
   </style>
@@ -247,14 +279,16 @@
 <body>
 
 
-  <!-- =========================
-       PANTALLA INICIO
-       ========================= -->
+  <!-- =====================================================
+       INICIO
+       ===================================================== -->
 
   <div id="inicio">
 
     <div class="titulo">
+
       MAULE INMERSIVO
+
     </div>
 
 
@@ -270,9 +304,9 @@
 
 
 
-  <!-- =========================
-       PANTALLA MAPA
-       ========================= -->
+  <!-- =====================================================
+       MAPA
+       ===================================================== -->
 
   <div id="mapaPantalla">
 
@@ -281,7 +315,8 @@
 
       <img
         src="IMAGENES/mapa.webp"
-        alt="Mapa de la Región del Maule">
+        alt="Mapa de la Región del Maule"
+      >
 
     </div>
 
@@ -290,8 +325,7 @@
       ZONA INVISIBLE DEL PUNTO 01
 
       No se ve.
-      El usuario toca directamente
-      sobre el mapa.
+      El usuario toca directamente el mapa.
     -->
 
     <button
@@ -313,9 +347,9 @@
 
 
 
-  <!-- =========================
+  <!-- =====================================================
        VIDEO 01
-       ========================= -->
+       ===================================================== -->
 
   <div id="videoPantalla">
 
@@ -326,7 +360,7 @@
       preload="auto">
 
       <source
-        src="VIDEOS/video 01.mp4"
+        src="VIDEOS/video%2001.mp4"
         type="video/mp4">
 
       Tu navegador no puede reproducir este video.
@@ -341,9 +375,9 @@
   <script>
 
 
-    /* =========================
+    /* =====================================================
        COMENZAR
-       ========================= */
+       ===================================================== */
 
     function comenzar() {
 
@@ -351,15 +385,35 @@
 
       document.getElementById("mapaPantalla").style.display = "flex";
 
-      document.documentElement.requestFullscreen?.();
+
+      /*
+        Intentar pantalla completa.
+        El usuario acaba de presionar COMENZAR,
+        por lo que Chrome permite esta acción.
+      */
+
+      if (document.documentElement.requestFullscreen) {
+
+        document.documentElement
+          .requestFullscreen()
+          .catch(function(error) {
+
+            console.log(
+              "Pantalla completa no disponible:",
+              error
+            );
+
+          });
+
+      }
 
     }
 
 
 
-    /* =========================
+    /* =====================================================
        ABRIR VIDEO 01
-       ========================= */
+       ===================================================== */
 
     function abrirVideo01() {
 
@@ -373,39 +427,53 @@
         document.getElementById("video01");
 
 
-      /* Ocultar mapa */
+      /*
+        Ocultar mapa
+      */
 
       mapa.style.display = "none";
 
 
-      /* Mostrar video */
+      /*
+        Mostrar video
+      */
 
       pantallaVideo.style.display = "flex";
 
 
-      /* Comenzar desde el principio */
+      /*
+        Comenzar desde el principio
+      */
 
       video.currentTime = 0;
 
 
-      /* Reproducir */
+      /*
+        Reproducir video local
+      */
 
-      video.play().catch(function(error) {
+      video.play()
+        .then(function() {
 
-        console.log(
-          "No se pudo iniciar el video:",
-          error
-        );
+          console.log("Video 01 iniciado correctamente.");
 
-      });
+        })
+        .catch(function(error) {
+
+          console.error(
+            "ERROR AL REPRODUCIR VIDEO 01:",
+            error
+          );
+
+        });
 
     }
 
 
 
-    /* =========================
-       VIDEO TERMINADO
-       ========================= */
+    /* =====================================================
+       CUANDO TERMINA EL VIDEO
+       ===================================================== */
 
     document
       .getElementById("video01")
@@ -413,19 +481,28 @@
         "ended",
         function() {
 
+
+          /*
+            Detener y reiniciar
+          */
+
           this.pause();
 
           this.currentTime = 0;
 
 
-          /* Ocultar video */
+          /*
+            Ocultar video
+          */
 
           document
             .getElementById("videoPantalla")
             .style.display = "none";
 
 
-          /* Volver al mapa */
+          /*
+            Regresar inmediatamente al mapa
+          */
 
           document
             .getElementById("mapaPantalla")
@@ -436,22 +513,42 @@
 
 
 
-    /* =========================
+    /* =====================================================
        VOLVER AL INICIO
-       ========================= */
+       ===================================================== */
 
     function volverInicio() {
 
-      const mapa =
-        document.getElementById("mapaPantalla");
 
-      const inicio =
-        document.getElementById("inicio");
+      /*
+        Si por alguna razón el video estuviera activo,
+        detenerlo.
+      */
+
+      const video =
+        document.getElementById("video01");
+
+      video.pause();
+
+      video.currentTime = 0;
 
 
-      mapa.style.display = "none";
+      /*
+        Ocultar mapa
+      */
 
-      inicio.style.display = "flex";
+      document
+        .getElementById("mapaPantalla")
+        .style.display = "none";
+
+
+      /*
+        Mostrar inicio
+      */
+
+      document
+        .getElementById("inicio")
+        .style.display = "flex";
 
     }
 
