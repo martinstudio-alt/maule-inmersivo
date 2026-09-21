@@ -1,60 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
   <title>MAULE INMERSO</title>
 
+
   <style>
+
     * {
       box-sizing: border-box;
     }
 
-    html, body {
+
+    html,
+    body {
+
       margin: 0;
+
       width: 100%;
+
       height: 100%;
+
       overflow: hidden;
+
       font-family: Arial, sans-serif;
+
       background: #000;
+
     }
+
 
     /* =========================
        PANTALLA INICIO
        ========================= */
 
     #inicio {
+
       width: 100%;
+
       height: 100%;
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 40px;
+
       background: #000;
+
     }
+
 
     .titulo {
+
       color: white;
+
       font-size: clamp(40px, 7vw, 90px);
+
       font-weight: 600;
+
       letter-spacing: 8px;
+
       text-align: center;
+
     }
+
 
     .boton {
+
       padding: 18px 55px;
+
       font-size: 24px;
+
       border: 2px solid white;
+
       border-radius: 50px;
+
       background: transparent;
+
       color: white;
+
       cursor: pointer;
+
     }
 
+
     .boton:hover {
+
       background: white;
+
       color: black;
+
     }
 
 
@@ -63,64 +109,123 @@
        ========================= */
 
     #mapaPantalla {
+
       display: none;
+
       width: 100%;
+
       height: 100%;
+
       background: #111;
+
       position: relative;
+
       align-items: center;
+
       justify-content: center;
+
       flex-direction: column;
+
     }
+
 
     .tituloMapa {
+
       position: absolute;
+
       top: 30px;
+
       left: 0;
+
       width: 100%;
+
       text-align: center;
+
       color: white;
+
       font-size: clamp(28px, 4vw, 55px);
+
       letter-spacing: 5px;
+
       z-index: 10;
+
     }
+
 
     .mapaContenedor {
-      width: min(80vw, 600px);
-      height: 75vh;
+
+      width: 100%;
+
+      height: 100%;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
     }
+
 
     .mapaContenedor img {
-      max-width: 100%;
-      max-height: 100%;
+
+      width: 100%;
+
+      height: 100%;
+
       object-fit: contain;
+
+      display: block;
+
     }
+
+
+    /* =========================
+       BOTÓN VOLVER
+       ========================= */
 
     .volver {
+
       position: absolute;
+
       bottom: 30px;
+
       left: 30px;
+
       padding: 12px 28px;
+
       font-size: 18px;
+
       border: 1px solid white;
+
       border-radius: 30px;
-      background: transparent;
+
+      background: rgba(0, 0, 0, 0.6);
+
       color: white;
+
       cursor: pointer;
+
+      z-index: 20;
+
     }
 
+
     .volver:hover {
+
       background: white;
+
       color: black;
+
     }
+
   </style>
+
 </head>
 
 
 <body>
+
 
   <!-- =========================
        INICIO
@@ -129,14 +234,22 @@
   <div id="inicio">
 
     <div class="titulo">
+
       MAULE INMERSO
+
     </div>
 
-    <button class="boton" onclick="comenzar()">
+
+    <button
+      class="boton"
+      onclick="comenzar()">
+
       COMENZAR
+
     </button>
 
   </div>
+
 
 
   <!-- =========================
@@ -145,27 +258,42 @@
 
   <div id="mapaPantalla">
 
+
     <div class="tituloMapa">
+
       MAULE
+
     </div>
+
 
     <div class="mapaContenedor">
 
       <img
-        src="https://drive.google.com/uc?export=view&id=1RM78Jn1BFrPTOsVHVh2S1JdEvnlowipj"
-        alt="Mapa de la Región del Maule"
-      >
+        src="https://drive.google.com/thumbnail?id=1RM78Jn1BFrPTOsVHVh2S1JdEvnlowipj&sz=w1920"
+        alt="Mapa de la Región del Maule">
 
     </div>
 
-    <button class="volver" onclick="volverInicio()">
+
+    <button
+      class="volver"
+      onclick="volverInicio()">
+
       VOLVER
+
     </button>
+
 
   </div>
 
 
+
   <script>
+
+
+    /* =========================
+       IR AL MAPA
+       ========================= */
 
     function comenzar() {
 
@@ -178,6 +306,11 @@
     }
 
 
+
+    /* =========================
+       VOLVER AL INICIO
+       ========================= */
+
     function volverInicio() {
 
       document.getElementById("mapaPantalla").style.display = "none";
@@ -186,7 +319,10 @@
 
     }
 
+
   </script>
 
+
 </body>
+
 </html>
