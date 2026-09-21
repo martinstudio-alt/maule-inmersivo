@@ -2,9 +2,13 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>MAULE INMERSO</title>
+
 
   <style>
 
@@ -12,52 +16,90 @@
       box-sizing: border-box;
     }
 
+
     html,
     body {
+
       margin: 0;
+
       width: 100%;
+
       height: 100%;
+
       overflow: hidden;
+
       font-family: Arial, sans-serif;
+
       background: #000;
+
     }
+
 
     /* =========================
        PANTALLA INICIO
        ========================= */
 
     #inicio {
+
       width: 100%;
+
       height: 100%;
+
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
+
       gap: 40px;
+
       background: #000;
+
     }
+
 
     .titulo {
+
       color: white;
+
       font-size: clamp(40px, 7vw, 90px);
+
       font-weight: 600;
+
       letter-spacing: 8px;
+
       text-align: center;
+
     }
+
 
     .boton {
+
       padding: 18px 55px;
+
       font-size: 24px;
+
       border: 2px solid white;
+
       border-radius: 50px;
+
       background: transparent;
+
       color: white;
+
       cursor: pointer;
+
     }
 
+
     .boton:hover {
+
       background: white;
+
       color: black;
+
     }
 
 
@@ -66,41 +108,74 @@
        ========================= */
 
     #mapaPantalla {
+
       display: none;
+
       width: 100%;
+
       height: 100%;
+
       background: #111;
+
       position: relative;
+
       align-items: center;
+
       justify-content: center;
+
       flex-direction: column;
+
     }
+
 
     .tituloMapa {
+
       position: absolute;
+
       top: 30px;
+
       left: 0;
+
       width: 100%;
+
       text-align: center;
+
       color: white;
+
       font-size: clamp(28px, 4vw, 55px);
+
       letter-spacing: 5px;
+
       z-index: 10;
+
     }
+
 
     .mapaContenedor {
+
       width: 100%;
+
       height: 100%;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
     }
 
+
     .mapaContenedor img {
+
       width: 100%;
+
       height: 100%;
+
       object-fit: contain;
+
       display: block;
+
     }
 
 
@@ -109,27 +184,33 @@
        ========================= */
 
     .marcador {
+
       position: absolute;
 
       left: 74%;
+
       top: 21%;
 
-      width: 70px;
-      height: 70px;
+      width: 81px;
+
+      height: 81px;
 
       border-radius: 50%;
 
       border: 4px solid white;
 
-      background: #000;
+      background: transparent;
 
       color: white;
 
       font-size: 22px;
+
       font-weight: bold;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       cursor: pointer;
@@ -137,42 +218,58 @@
       z-index: 30;
 
       box-shadow: 0 0 15px rgba(255,255,255,0.7);
+
+      padding: 0;
+
     }
 
+
     .marcador:hover {
+
       transform: scale(1.1);
+
     }
 
 
     /* =========================
-       PANTALLA PUNTO 01
+       PANTALLA VIDEO
        ========================= */
 
-    #punto01 {
-      display: none;
+    #videoPantalla {
 
-      width: 100%;
-      height: 100%;
+      display: none;
 
       position: absolute;
 
+      top: 0;
+
+      left: 0;
+
+      width: 100%;
+
+      height: 100%;
+
       background: #000;
 
-      color: white;
+      z-index: 100;
 
       align-items: center;
+
       justify-content: center;
 
-      flex-direction: column;
-
-      gap: 30px;
-
-      z-index: 100;
     }
 
-    .tituloPunto {
-      font-size: clamp(50px, 8vw, 100px);
-      letter-spacing: 8px;
+
+    #video01 {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      background: #000;
+
     }
 
 
@@ -181,9 +278,11 @@
        ========================= */
 
     .volver {
+
       position: absolute;
 
       bottom: 30px;
+
       left: 30px;
 
       padding: 12px 28px;
@@ -201,11 +300,16 @@
       cursor: pointer;
 
       z-index: 200;
+
     }
 
+
     .volver:hover {
+
       background: white;
+
       color: black;
+
     }
 
   </style>
@@ -223,8 +327,11 @@
   <div id="inicio">
 
     <div class="titulo">
+
       MAULE INMERSO
+
     </div>
+
 
     <button
       class="boton"
@@ -245,7 +352,9 @@
   <div id="mapaPantalla">
 
     <div class="tituloMapa">
+
       MAULE
+
     </div>
 
 
@@ -262,7 +371,7 @@
 
     <button
       class="marcador"
-      onclick="abrirPunto01()">
+      onclick="abrirVideo01()">
 
       01
 
@@ -282,22 +391,24 @@
 
 
   <!-- =========================
-       PUNTO 01
+       VIDEO 01
        ========================= -->
 
-  <div id="punto01">
+  <div id="videoPantalla">
 
-    <div class="tituloPunto">
-      PUNTO 01
-    </div>
+    <video
+      id="video01"
+      playsinline
+      preload="auto"
+      controls="false">
 
-    <button
-      class="volver"
-      onclick="volverMapa()">
+      <source
+        src="https://drive.google.com/uc?export=download&id=11i4upX3539zK_nJPzEw9v06o6gCOEIZB"
+        type="video/mp4">
 
-      VOLVER AL MAPA
+      Tu navegador no puede reproducir este video.
 
-    </button>
+    </video>
 
   </div>
 
@@ -323,30 +434,52 @@
 
 
     /* =========================
-       ABRIR PUNTO 01
+       ABRIR VIDEO 01
        ========================= */
 
-    function abrirPunto01() {
+    function abrirVideo01() {
 
-      document.getElementById("mapaPantalla").style.display = "none";
+      const mapa = document.getElementById("mapaPantalla");
 
-      document.getElementById("punto01").style.display = "flex";
+      const videoPantalla = document.getElementById("videoPantalla");
+
+      const video = document.getElementById("video01");
+
+
+      mapa.style.display = "none";
+
+      videoPantalla.style.display = "flex";
+
+
+      video.currentTime = 0;
+
+
+      video.play().catch(error => {
+
+        console.log("No se pudo iniciar automáticamente:", error);
+
+      });
 
     }
 
 
 
     /* =========================
-       VOLVER AL MAPA
+       VIDEO TERMINADO
        ========================= */
 
-    function volverMapa() {
+    document.getElementById("video01").addEventListener("ended", function() {
 
-      document.getElementById("punto01").style.display = "none";
+      this.pause();
+
+      this.currentTime = 0;
+
+
+      document.getElementById("videoPantalla").style.display = "none";
 
       document.getElementById("mapaPantalla").style.display = "flex";
 
-    }
+    });
 
 
 
